@@ -65,7 +65,7 @@ async function uploadImages(imageData) {
             }
         );
         // Return the new output URL, replacing "input" with "output"
-        return `http://localhost:4000/images/input/${outputFileName}`;
+        return `${process.env.IMAGE_URL}/images/input/${outputFileName}`;
     } catch (error) {
         console.error(error.message);
     }
