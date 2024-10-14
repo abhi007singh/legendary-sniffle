@@ -38,7 +38,7 @@ webhook.post('/webhook', async (req, res) => {
     const { requestId, status } = req.body;
 
     await InputCSV.updateMany({ requestId }, { status });
-
+    
     res.status(200).send('Webhook received');
 });
 
