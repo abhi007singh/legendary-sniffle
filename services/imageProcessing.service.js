@@ -24,7 +24,7 @@ async function reduceImageQuality(requestId) {
 
                     console.log(`Image processed and saved for ${imageUrl}`);
                 } catch (error) {
-                    console.error(`Error processing image ${imageUrl}:`, error);
+                    console.error(`Error processing image ${imageUrl}:`, error.message);
                 }
             }
         }
