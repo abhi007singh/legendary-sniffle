@@ -41,8 +41,12 @@ async function fetchImages(url) {
 }
 
 async function getImageBuffer(url) {
-    const response = await axios.get(url, { responseType: 'arraybuffer' });
-    return Buffer.from(response.data, 'binary');
+    try {
+        const response = await axios.get(url, { responseType: 'arraybuffer' });
+        return Buffer.from(response.data, 'binary');
+    } catch (error) {
+        console.error(error.message);
+    }
 }
 
 async function uploadImages(imageData) {
