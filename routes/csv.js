@@ -61,7 +61,7 @@ router.post("/parse", upload.single('file'), async (req, res) => {
                     data: { referenceId: requestId }
                 });
                 await InputCSV.create(result);
-                reduceImageQuality(requestId);
+                await reduceImageQuality(requestId);
             })
             .on('error', (error) => {
                 console.error('Error processing CSV file:', error);
